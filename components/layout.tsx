@@ -9,7 +9,7 @@ export const siteTitle = 'Nextjs Blog'
 
 type Props = {
   children: React.ReactNode,
-  home: boolean
+  home?: boolean
 }
 
 const Layout: React.FC<Props> = ({ children, home }) => {
