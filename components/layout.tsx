@@ -31,7 +31,7 @@ const Layout: React.FC<Props> = ({ children, home }) => {
               width={108}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 data-testid="home__profile-name" className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
