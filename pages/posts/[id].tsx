@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '@/components/layout'
 import Date from '@/components/date'
 import { Post } from '@/lib/types'
-import { getAllPostIds, getPostData } from '@/lib/posts'
+import { getAllPostIds, getPostData } from '../../lib/posts'
 import utilStyles from '@/styles/utils.module.css'
 
 type Props = {
@@ -18,11 +18,11 @@ export default function PostPage({ postData }: Props) {
       </Head>
 
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 data-testid="post-title" className={utilStyles.headingXl}>{postData.title}</h1>
+        <div data-testid="post-date" className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div data-testid="post-content" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
   )
